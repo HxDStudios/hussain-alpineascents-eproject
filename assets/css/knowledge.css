@@ -1,0 +1,14 @@
+.kb-stage { padding: 110px 48px 50px 48px; }
+.kb-tabs-nav { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 34px; }
+.kb-tab-btn { background-color: var(--bg-surface); border: 1px solid var(--border-rule); color: #cbd5e1; padding: 10px 22px; border-radius: 9999px; font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+.kb-tab-btn:hover { color: #ffffff; border-color: var(--accent-ochre); }
+.kb-tab-btn.active { background-color: var(--accent-ochre); color: #000000; font-weight: 700; border-color: var(--accent-ochre); }
+.tab-content { display: block; }
+.tab-content.tab-hidden { display: none; }
+.article-card { background-color: var(--bg-card); border: 1px solid var(--border-rule); border-radius: 10px; padding: 26px 24px; margin-bottom: 20px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35); transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
+.article-card:hover { border-color: var(--accent-ochre); background-color: var(--bg-card-hover); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45); }
+.article-title { font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-bottom: 12px; }
+.article-summary { font-size: 0.92rem; color: #cbd5e1; line-height: 1.65; }
+.article-meta { font-size: 0.82rem; color: #8fa0b5; }
+.kb-info-callout { background-color: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; padding: 16px; margin-bottom: 14px; }
+.kb-stat-strong { font-weight: 800; font-size: 1.15rem; }

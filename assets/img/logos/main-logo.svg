@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="180" viewBox="0 0 760 180">
+<rect width="760" height="180" fill="none"/>
+<g transform="translate(10 35) scale(1.15)"><g stroke-linecap="round" stroke-linejoin="round">
+<path d="M18 76 L48 28 L62 49 L77 20 L112 76 Z" fill="none" stroke="#F7FAFC" stroke-width="8"/>
+<path d="M48 28 L62 49 L77 20" fill="none" stroke="#2D9CDB" stroke-width="8"/>
+<path d="M70 30 L77 20 L84 33" fill="none" stroke="#F29E4C" stroke-width="7"/>
+<path d="M39 76 L91 76" fill="none" stroke="#2D9CDB" stroke-width="6"/>
+</g></g>
+<text x="165" y="91" font-family="'Plus Jakarta Sans', Arial, Helvetica, sans-serif" font-size="48" font-weight="700" letter-spacing="1.2" fill="#F7FAFC">ALPINE</text>
+<text x="165" y="137" font-family="'Plus Jakarta Sans', Arial, Helvetica, sans-serif" font-size="37" font-weight="500" letter-spacing="5.5" fill="#2D9CDB">ASCENTS</text>
+</svg>

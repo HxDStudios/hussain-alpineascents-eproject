@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="310" height="72" viewBox="0 0 310 72">
+<g transform="translate(0 2) scale(.64)"><g stroke-linecap="round" stroke-linejoin="round">
+<path d="M18 76 L48 28 L62 49 L77 20 L112 76 Z" fill="none" stroke="#18324B" stroke-width="8"/>
+<path d="M48 28 L62 49 L77 20" fill="none" stroke="#2D9CDB" stroke-width="8"/>
+<path d="M70 30 L77 20 L84 33" fill="none" stroke="#F29E4C" stroke-width="7"/>
+<path d="M39 76 L91 76" fill="none" stroke="#2D9CDB" stroke-width="6"/>
+</g></g>
+<text x="88" y="32" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing=".4" fill="#18324B">ALPINE</text>
+<text x="88" y="55" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600" letter-spacing="2.5" fill="#2D9CDB">ASCENTS</text>
+</svg>
