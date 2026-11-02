@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Altitude Acclimatization & Training Protocols | Alpine Ascents</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logos/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logos/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/logos/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/logos/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261029_fix_v3">
+  <link rel="stylesheet" href="assets/css/training.css">
+</head>
+<body>
+    <header class="navbar">
+    <div class="nav-box">
+      <a href="index.html" class="logo-box"  aria-label="Alpine Ascents">
+        <img src="assets/img/logos/navbar-logo.svg" alt="Alpine Ascents" class="site-logo">
+      </a>
+      <nav class="nav-links d-none d-xl-flex">
+        <a href="index.html" class="nav-item" data-target="home-page">Expeditions</a>
+        <a href="knowledge.html" class="nav-item" data-target="info-page">Knowledge Base</a>
+        <a href="clubs.html" class="nav-item" data-target="map-page">Clubs &amp; Map</a>
+        <a href="training.html" class="nav-item active" data-target="training-page">Training &amp; Routes</a>
+        <a href="stories.html" class="nav-item" data-target="stories-page">Dispatches</a>
+        <a href="about.html" class="nav-item" data-target="about-page">About &amp; Ethics</a>
+        <a href="contact.html" class="nav-item" data-target="contact-page">Contact Us</a>
+      </nav>
+      <div class="nav-right-cluster">
+        <div class="counter-badge d-none d-sm-flex">
+          <span class="dot-yellow"></span>
+          <span>Visitors:</span>
+          <span id="visitor-counter" class="counter-number">1,482</span>
+        </div>
+        <button id="menu-button" class="menu-btn d-xl-none" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <div id="mobile-menu" class="mobile-box">
+        <div class="mobile-counter-box d-sm-none">
+          <span class="dot-yellow"></span>
+          <span>Visitors: <strong id="mobile-counter" class="counter-number">1,482</strong></span>
+        </div>
+        <a href="index.html" class="mobile-link" data-target="home-page">
+          <i class="fa-solid fa-mountain me-2"></i> Expeditions
+        </a>
+        <a href="knowledge.html" class="mobile-link" data-target="info-page">
+          <i class="fa-solid fa-book-open me-2"></i> Knowledge Base
+        </a>
+        <a href="clubs.html" class="mobile-link" data-target="map-page">
+          <i class="fa-solid fa-map-location-dot me-2"></i> Clubs &amp; Map
+        </a>
+        <a href="training.html" class="mobile-link active" data-target="training-page">
+          <i class="fa-solid fa-route me-2"></i> Training &amp; Routes
+        </a>
+        <a href="stories.html" class="mobile-link" data-target="stories-page">
+          <i class="fa-solid fa-newspaper me-2"></i> Dispatches
+        </a>
+        <a href="about.html" class="mobile-link" data-target="about-page">
+          <i class="fa-solid fa-shield-halved me-2"></i> About &amp; Ethics
+        </a>
+        <a href="contact.html" class="mobile-link" data-target="contact-page">
+          <i class="fa-solid fa-envelope me-2"></i> Contact Us
+        </a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section id="training-page" class="spa-view-section">
+      <div class="section-inner-container">
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-8">
+            <div class="map-headline-label">Technical Progression & Protocols</div>
+            <h2 class="section-heading mb-3">High-Altitude Engineering & Acclimatization</h2>
+            <p class="article-summary fs-6">
+              Climbing high altitude mountains requires steady body fitness and proper acclimatization. Learn basic rope safety, mountain health rules, and gear preparation below.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <button class="btn-main" data-bs-toggle="modal" data-bs-target="#booking-modal">
+              <i class="fa-solid fa-clipboard-check"></i> Join Training Camp
+            </button>
+          </div>
+        </div>
+        <div class="row g-4 mb-5">
+          <div class="col-lg-6">
+            <div class="calculator-box h-100">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="icon-box"><i class="fa-solid fa-calculator"></i></div>
+                <div>
+                  <h4 class="article-title mb-1">Acclimatization Ceiling Calculator</h4>
+                  <div class="small text-muted">Find your safe daily climbing height based on the standard 300m rule</div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label text-muted small fw-semibold">Current Camp Altitude (meters)</label>
+                <input type="number" id="start-height" class="input-box" value="4800" min="1000" max="8000">
+              </div>
+              <div class="mb-4">
+                <label class="form-label text-muted small fw-semibold">Target Summit / High Camp Altitude (meters)</label>
+                <input type="number" id="target-height" class="input-box" value="7100" min="1000" max="8848">
+              </div>
+              <button type="button" class="btn-main w-100 justify-content-center" id="calculate-btn">
+                Calculate Safe Schedule
+              </button>
+              <div id="result-box" class="result-display-box">
+                <div class="text-emerald fw-bold mb-2" id="result-title">Acclimatization Analysis</div>
+                <div class="small text-white-50" id="result-text"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="calculator-box h-100">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                <div>
+                  <h4 class="article-title mb-1">Mandatory Technical Gear Manifest</h4>
+                  <div class="small text-muted">Grade V+ Technical Expedition Checklist</div>
+                </div>
+              </div>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <div class="training-callout-card">
+                    <div class="fw-bold text-white mb-1"><i class="fa-solid fa-shoe-prints text-ochre me-2"></i> Footwear</div>
+                    <div class="small text-muted">Warm double or triple boots with built-in covers and sharp steel crampons.</div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="training-callout-card">
+                    <div class="fw-bold text-white mb-1"><i class="fa-solid fa-mask-ventilator text-ochre me-2"></i> Supplemental O₂</div>
+                    <div class="small text-muted">Lightweight oxygen bottles with demand breathing masks.</div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="training-callout-card">
+                    <div class="fw-bold text-white mb-1"><i class="fa-solid fa-vest text-ochre me-2"></i> Insulation</div>
+                    <div class="small text-muted">Thick one-piece down suit that keeps you warm in freezing winds.</div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="training-callout-card">
+                    <div class="fw-bold text-white mb-1"><i class="fa-solid fa-tower-broadcast text-ochre me-2"></i> Beacon / Comms</div>
+                    <div class="small text-muted">Satellite message device and two-way radio for base camp contact.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h4 class="fw-bold text-white mb-3"><i class="fa-solid fa-route text-ochre me-2"></i> Premier High-Altitude Route Comparison Matrix</h4>
+        <div class="glass-table-container table-responsive">
+          <table class="glass-table">
+            <thead>
+              <tr>
+                <th>Route Name</th>
+                <th>Peak & Height</th>
+                <th>Technical Grade</th>
+                <th>Base Camp Elevation</th>
+                <th>Primary Crux</th>
+                <th>Optimal Season</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong class="text-white">South Col via Khumbu Icefall</strong></td>
+                <td>Mount Everest (8,848m)</td>
+                <td>Grade IV / Moderate Mixed</td>
+                <td>5,364m (EBC)</td>
+                <td>Hillary Step & Geneva Spur</td>
+                <td>May (Pre-Monsoon Window)</td>
+              </tr>
+              <tr>
+                <td><strong class="text-white">Abruzzi Spur</strong></td>
+                <td>K2 (8,611m)</td>
+                <td>Grade V+ / Extreme Technical</td>
+                <td>5,150m (Godwin-Austen)</td>
+                <td>House Chimney & Bottleneck Ice Ridge</td>
+                <td>July - August (Karakoram Summer)</td>
+              </tr>
+              <tr>
+                <td><strong class="text-white">Southwest Ridge</strong></td>
+                <td>Ama Dablam (6,812m)</td>
+                <td>Grade V / Severe Mixed Rock & Ice</td>
+                <td>4,570m (Mingbo Valley)</td>
+                <td>Mushroom Ridge & Yellow Tower</td>
+                <td>October - November (Post-Monsoon)</td>
+              </tr>
+              <tr>
+                <td><strong class="text-white">Hörnli Ridge</strong></td>
+                <td>Matterhorn (4,478m)</td>
+                <td>Grade AD / Classical Alpine Rock</td>
+                <td>3,260m (Hörnli Hut)</td>
+                <td>Moseley Slabs & Shoulder Ice</td>
+                <td>July - September</td>
+              </tr>
+              <tr>
+                <td><strong class="text-white">North Face Dutch Rib</strong></td>
+                <td>Annapurna I (8,091m)</td>
+                <td>Grade V+ / Avalanche Prone</td>
+                <td>4,130m (Annapurna Sanctuary)</td>
+                <td>Sickle Ice Cliff & Avalanche Chutes</td>
+                <td>April - May</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <div class="footer-logo">
+          <img src="assets/img/logos/main-logo.svg" alt="Alpine Ascents" class="footer-logo-img">
+        </div>
+        <p class="footer-text">
+          Alpine Ascents helps climbers plan safe expeditions to the world's highest mountains. We focus on skilled guide work, clean mountain camps, and caring for local climbing staff.
+        </p>
+        <div class="footer-badges">
+          <span class="cert-badge"><i class="fa-solid fa-award text-emerald"></i> UIAA Member</span>
+          <span class="cert-badge"><i class="fa-solid fa-shield-halved text-emerald"></i> IFMGA Certified</span>
+          <span class="cert-badge"><i class="fa-solid fa-leaf text-emerald"></i> Leave No Trace</span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h5 class="footer-title">Expedition Portals</h5>
+        <ul class="footer-menu">
+          <li><a href="index.html"><i class="fa-solid fa-angle-right me-2 text-emerald"></i>Summit Dashboard</a></li>
+          <li><a href="knowledge.html"><i class="fa-solid fa-angle-right me-2 text-emerald"></i>Knowledge &amp; Physiology</a></li>
+          <li><a href="clubs.html"><i class="fa-solid fa-angle-right me-2 text-emerald"></i>Global Clubs &amp; Federations</a></li>
+          <li><a href="training.html"><i class="fa-solid fa-angle-right me-2 text-emerald"></i>Altitude Training &amp; Matrix</a></li>
+          <li><a href="stories.html"><i class="fa-solid fa-angle-right me-2 text-emerald"></i>Dispatches &amp; Rescues</a></li>
+          <li><a href="about.html"><i class="fa-solid fa-angle-right me-2 text-emerald"></i>Legacy, Ethics &amp; Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-camps">
+        <h5 class="footer-title">Regional Forward Bases</h5>
+        <div class="camp-item">
+          <strong>Kathmandu Base (Himalayas)</strong>
+          <span>Thamel Post, Kathmandu 44600, Nepal | Sat: +977 1 470 0000</span>
+        </div>
+        <div class="camp-item">
+          <strong>Skardu Headquarters (Karakoram)</strong>
+          <span>Airport Rd, Skardu 20430, Gilgit-Baltistan | Sat: +92 5815 450000</span>
+        </div>
+        <div class="camp-item">
+          <strong>Chamonix Command (Alps)</strong>
+          <span>Place de l'Église, 74400 Chamonix, France | +33 4 50 53 00 88</span>
+        </div>
+      </div>
+      <div class="footer-signup">
+        <h5 class="footer-title">High-Altitude Weather Bulletin</h5>
+        <p class="footer-text">
+          Get monthly climbing stories, base camp news, and upcoming mountain trip dates delivered to your email.
+        </p>
+        <div class="subscribe-box">
+          <input type="email" placeholder="basecamp@iridium-link.net" class="subscribe-input" id="email-input">
+          <button class="btn-emerald-sm" type="button" onclick="handleSubscribe()"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+        <div id="subscribe-alert" class="sub-alert-text">
+          <i class="fa-solid fa-check text-emerald me-1"></i> Dispatches synched to satellite feed.
+        </div>
+        <div class="alert-box">
+          <div class="satcom-label"><i class="fa-solid fa-satellite text-warning me-2"></i>Emergency Distress Sat-Com</div>
+          <div class="satcom-freq">Freq: <strong>143.900 MHz</strong> | Cospas-Sarsat: <strong>406.025 MHz</strong></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="copyright">
+        &copy; 2026 Alpine Ascents Portal. Aptech ACCP AI eProject Architecture. All global climbing dispatches verified under UIAA standards.
+      </div>
+      <div class="status-text">
+        <span class="status-indicator-live"></span> Live Station Active: Summit Weather Online
+      </div>
+    </div>
+  </footer>
+  <div class="modal fade" id="booking-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-dialog-glass p-4">
+        <div class="modal-header border-0 pb-0">
+          <h4 class="modal-title fw-bold text-white">Book High-Altitude Expedition</h4>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="booking-form">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label text-muted small fw-semibold">Target Peak</label>
+                <select class="input-box" id="peak-dropdown" required>
+                  <option value="K2 (8,611m)" selected>K2 / Godwin-Austen (8,611m) [Abruzzi Spur]</option>
+                  <option value="Everest (8,848m)">Mount Everest (8,848m) [South Col]</option>
+                  <option value="Ama Dablam (6,812m)">Ama Dablam (6,812m) [SW Ridge]</option>
+                  <option value="Matterhorn (4,478m)">Matterhorn (4,478m) [H&ouml;rnli Ridge]</option>
+                  <option value="Broad Peak (8,051m)">Broad Peak (8,051m) [West Ridge]</option>
+                  <option value="Mont Blanc (4,810m)">Mont Blanc (4,810m) [Go&ucirc;ter Ridge]</option>
+                  <option value="Lhotse (8,516m)">Lhotse (8,516m) [South Face]</option>
+                  <option value="Annapurna I (8,091m)">Annapurna I (8,091m) [North Face]</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label text-muted small fw-semibold">Expedition Season</label>
+                <select class="input-box" required>
+                  <option selected>Post-Monsoon Alpine Window (Autumn 2026)</option>
+                  <option>Spring 2026 (Pre-Monsoon Window)</option>
+                  <option>Summer 2026 (Karakoram Season)</option>
+                  <option>Winter 2026/27 (Winter Climbing Season)</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label text-muted small fw-semibold">Full Legal Name</label>
+                <input type="text" class="input-box" placeholder="Reinhold Messner" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label text-muted small fw-semibold">Contact Email</label>
+                <input type="email" class="input-box" placeholder="lead.guide@chamonix-alpinist.com" required>
+              </div>
+              <div class="col-12">
+                <label class="form-label text-muted small fw-semibold">Prior High-Altitude Experience & Certifications</label>
+                <textarea class="input-box" rows="3" placeholder="Detail 7,000m+ ascent logs, technical mixed grades (e.g., WI5/M6), glacier crevasse arrest certs, and alpine endurance history..." required></textarea>
+              </div>
+              <div class="col-12 text-end mt-4">
+                <button type="button" class="btn-outline me-2" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn-main">Submit Application</button>
+              </div>
+            </div>
+          </form>
+          <div id="success-message" class="mt-3 p-3 rounded border border-ochre text-ochre booking-success-box">
+            <i class="fa-solid fa-circle-check me-2"></i> Application received. Our Chief Medical & Logistics Officer will review your prior ascent logs within 24 hours.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <div class="bar-label">
+      <i class="fa-solid fa-satellite-dish"></i> Live Stream
+    </div>
+    <div class="bar-scroll">
+      <span class="bar-item"><i class="fa-regular fa-clock me-1"></i> <strong id="clock-time">--:--:-- UTC</strong></span>
+      <span class="bar-item"><i class="fa-regular fa-calendar me-1"></i> <strong id="clock-date">SYNCING CALENDAR...</strong></span>
+      <span class="bar-item"><i class="fa-solid fa-location-dot me-1"></i> <strong id="current-location">ACQUIRING SAT COMM / BEACON...</strong></span>
+      <span class="bar-item"><i class="fa-solid fa-mountain me-1"></i> Everest Base Camp: <strong>5,364m | -18°C</strong></span>
+      <span class="bar-item"><i class="fa-solid fa-wind me-1"></i> K2 Godwin-Austen: <strong>5,150m | -24°C</strong></span>
+      <span class="bar-item"><i class="fa-solid fa-shield-halved me-1"></i> Safety Status: <strong>All Weather Stations Online</strong></span>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="assets/js/main.js?v=20261024_dynamic_v1"></script>
+</body>
+</html>

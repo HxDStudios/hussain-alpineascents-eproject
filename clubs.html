@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Clubs & Interactive Topographic Map | Alpine Ascents</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logos/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logos/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/logos/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/logos/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261029_fix_v3">
+  <link rel="stylesheet" href="assets/css/clubs.css">
+</head>
+<body>
+    <header class="navbar">
+    <div class="nav-box">
+      <a href="index.html" class="logo-box"  aria-label="Alpine Ascents">
+        <img src="assets/img/logos/navbar-logo.svg" alt="Alpine Ascents" class="site-logo">
+      </a>
+      <nav class="nav-links d-none d-xl-flex">
+        <a href="index.html" class="nav-item" data-target="home-page">Expeditions</a>
+        <a href="knowledge.html" class="nav-item" data-target="info-page">Knowledge Base</a>
+        <a href="clubs.html" class="nav-item active" data-target="map-page">Clubs &amp; Map</a>
+        <a href="training.html" class="nav-item" data-target="training-page">Training &amp; Routes</a>
+        <a href="stories.html" class="nav-item" data-target="stories-page">Dispatches</a>
+        <a href="about.html" class="nav-item" data-target="about-page">About &amp; Ethics</a>
+        <a href="contact.html" class="nav-item" data-target="contact-page">Contact Us</a>
+      </nav>
+      <div class="nav-right-cluster">
+        <div class="counter-badge d-none d-sm-flex">
+          <span class="dot-yellow"></span>
+          <span>Visitors:</span>
+          <span id="visitor-counter" class="counter-number">1,482</span>
+        </div>
+        <button id="menu-button" class="menu-btn d-xl-none" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <div id="mobile-menu" class="mobile-box">
+        <div class="mobile-counter-box d-sm-none">
+          <span class="dot-yellow"></span>
+          <span>Visitors: <strong id="mobile-counter" class="counter-number">1,482</strong></span>
+        </div>
+        <a href="index.html" class="mobile-link" data-target="home-page">
+          <i class="fa-solid fa-mountain me-2"></i> Expeditions
+        </a>
+        <a href="knowledge.html" class="mobile-link" data-target="info-page">
+          <i class="fa-solid fa-book-open me-2"></i> Knowledge Base
+        </a>
+        <a href="clubs.html" class="mobile-link active" data-target="map-page">
+          <i class="fa-solid fa-map-location-dot me-2"></i> Clubs &amp; Map
+        </a>
+        <a href="training.html" class="mobile-link" data-target="training-page">
+          <i class="fa-solid fa-route me-2"></i> Training &amp; Routes
+        </a>
+        <a href="stories.html" class="mobile-link" data-target="stories-page">
+          <i class="fa-solid fa-newspaper me-2"></i> Dispatches
+        </a>
+        <a href="about.html" class="mobile-link" data-target="about-page">
+          <i class="fa-solid fa-shield-halved me-2"></i> About &amp; Ethics
+        </a>
+        <a href="contact.html" class="mobile-link" data-target="contact-page">
+          <i class="fa-solid fa-envelope me-2"></i> Contact Us
+        </a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section id="map-page" class="spa-view-section">
+      <div class="section-inner-container">
+        <div class="map-control-subbar">
+          <div>
+            <div class="map-headline-label">Luxury mountaineering portal</div>
+            <h2 class="map-headline-main">Global Clubs & Expeditions Map</h2>
+          </div>
+          <div class="filter-row">
+            <select id="region-filter" class="filter-dropdown" aria-label="Filter by mountain region">
+              <option value="all">Region: All Ranges</option>
+              <option value="Himalayas">Himalayas (Nepal / Tibet)</option>
+              <option value="Karakoram">Karakoram (Pakistan)</option>
+              <option value="Alps">European Alps</option>
+              <option value="Americas">Americas (Alaska / Andes)</option>
+              <option value="Japan">Japanese Alps</option>
+            </select>
+            <select id="grade-filter" class="filter-dropdown" aria-label="Filter by technical grade">
+              <option value="all">Discipline: All Disciplines</option>
+              <option value="V+">Technical Rock &amp; Mixed (V+)</option>
+              <option value="Speed">Alpine Speed &amp; Records</option>
+              <option value="Expedition">8000m Siege &amp; High Altitude</option>
+            </select>
+            <select id="sort-filter" class="filter-dropdown" aria-label="Sort federations">
+              <option value="default">Sort: Default Order</option>
+              <option value="name-asc">Name: A to Z</option>
+              <option value="name-desc">Name: Z to A</option>
+              <option value="year-asc">Founded: Oldest First</option>
+              <option value="year-desc">Founded: Newest First</option>
+            </select>
+            <select id="layer-filter" class="filter-dropdown" aria-label="Toggle map layer style">
+              <option value="satellite">Layer: Satellite Imagery</option>
+              <option value="terrain">Layer: Topo &amp; Terrain</option>
+            </select>
+          </div>
+        </div>
+        <div class="map-wrapper">
+          <div id="main-map" class="map-container"></div>
+        <div class="map-sidebar">
+            <div class="club-card" data-region="Himalayas">
+              <div class="card-badge ribbon-gold">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+              <h4 class="club-title">8000er Elite Guild</h4>
+              <div class="club-count">7 Active Expeditions | Summit Rate: 98%</div>
+              <div class="club-tags">
+                <span class="tag-pill badge-gold-tint">Everest</span>
+                <span class="tag-pill badge-gold-tint">K2</span>
+                <span class="tag-pill badge-gold-tint">Lhotse</span>
+              </div>
+            </div>
+            <div class="club-card" data-region="Alps">
+              <div class="card-badge ribbon-ochre">
+                <i class="fa-solid fa-mountain"></i>
+              </div>
+              <h4 class="club-title">Alpine Speed Ascent Union</h4>
+              <div class="club-count">4 Active Expeditions | Speed Records</div>
+              <div class="club-tags">
+                <span class="tag-pill badge-emerald-tint">Matterhorn</span>
+                <span class="tag-pill badge-emerald-tint">Mont Blanc</span>
+                <span class="tag-pill badge-emerald-tint">V+</span>
+              </div>
+            </div>
+            <div class="club-card" data-region="Karakoram">
+              <div class="card-badge ribbon-teal">
+                <i class="fa-solid fa-compass"></i>
+              </div>
+              <h4 class="club-title">Karakoram Pioneers</h4>
+              <div class="club-count">4 Active Expeditions | Baltoro Glacier</div>
+              <div class="club-tags">
+                <span class="tag-pill">Broad Peak</span>
+                <span class="tag-pill">Gasherbrum</span>
+                <span class="tag-pill">Trango</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="directory-header-row">
+          <div>
+            <h3 class="section-heading fs-3 mb-1">Affiliated Federations Directory</h3>
+            <p class="article-summary mb-0">Official mountain climbing clubs, rescue teams, and alpine federations around the world.</p>
+          </div>
+          <div class="search-box">
+            <input type="text" id="club-search" placeholder="Search Karakoram, Alps, Andes, or peak name...">
+            <i class="fa-solid fa-magnifying-glass text-muted"></i>
+          </div>
+        </div>
+        <div id="clubs-list" class="clubs-grid">
+          <div class="federation-card" data-name="Alpine Club of Pakistan" data-year="1974" data-region="Karakoram" data-grade="V+">
+            <div class="fed-name-row">
+              <span class="federation-title">Alpine Club of Pakistan (ACP)</span>
+              <span class="year-badge">Est. 1974</span>
+            </div>
+            <div class="federation-location">Islamabad, Pakistan | Karakoram & Western Himalayas</div>
+            <p class="federation-text">The national mountain club of Pakistan. They coordinate climbing permits, porter safety, and helicopter rescues on K2, Nanga Parbat, and the Karakoram peaks.</p>
+          </div>
+          <div class="federation-card" data-name="The Alpine Club" data-year="1857" data-region="Alps" data-grade="Speed">
+            <div class="fed-name-row">
+              <span class="federation-title">The Alpine Club</span>
+              <span class="year-badge">Est. 1857</span>
+            </div>
+            <div class="federation-location">London, United Kingdom | International Mountain Climbing Club</div>
+            <p class="federation-text">Founded in 1857 as the world's first mountaineering club. They keep historical climbing journals, support exploration of remote peaks, and help new climbers learn safety skills.</p>
+          </div>
+          <div class="federation-card" data-name="American Alpine Club" data-year="1902" data-region="Americas" data-grade="Expedition">
+            <div class="fed-name-row">
+              <span class="federation-title">American Alpine Club (AAC)</span>
+              <span class="year-badge">Est. 1902</span>
+            </div>
+            <div class="federation-location">Golden, Colorado, USA | Alaska Range & Northern Cordillera</div>
+            <p class="federation-text">Publishes the annual American Alpine Journal and mountain safety reports. They protect public climbing areas, care for wilderness lands, and support mountain rescue.</p>
+          </div>
+          <div class="federation-card" data-name="The Himalayan Club" data-year="1928" data-region="Himalayas" data-grade="Expedition">
+            <div class="fed-name-row">
+              <span class="federation-title">The Himalayan Club</span>
+              <span class="year-badge">Est. 1928</span>
+            </div>
+            <div class="federation-location">Mumbai, India | Greater Himalayan Range & Karakoram</div>
+            <p class="federation-text">Formed in 1928 to encourage mountain exploration across the Himalayas. They record mountain history and celebrate the achievements of local Sherpa and Ladakhi guides.</p>
+          </div>
+          <div class="federation-card" data-name="Club Alpin Français" data-year="1874" data-region="Alps" data-grade="Speed">
+            <div class="fed-name-row">
+              <span class="federation-title">Club Alpin Français (FFCAM)</span>
+              <span class="year-badge">Est. 1874</span>
+            </div>
+            <div class="federation-location">Paris, France | European Alps & Pyrenees</div>
+            <p class="federation-text">Manages more than 120 mountain huts across the French Alps, trains mountain guides, and leads cleanup projects to keep alpine trails clean.</p>
+          </div>
+          <div class="federation-card" data-name="Swiss Alpine Club" data-year="1863" data-region="Alps" data-grade="V+">
+            <div class="fed-name-row">
+              <span class="federation-title">Swiss Alpine Club (SAC)</span>
+              <span class="year-badge">Est. 1863</span>
+            </div>
+            <div class="federation-location">Bern, Switzerland | Pennine & Bernese Alps</div>
+            <p class="federation-text">Pioneers in high-altitude mountain huts, detailed trail maps, and air rescue coordination across famous Swiss peaks like the Matterhorn and Eiger.</p>
+          </div>
+          <div class="federation-card" data-name="Club Alpino Italiano" data-year="1863" data-region="Alps" data-grade="V+">
+            <div class="fed-name-row">
+              <span class="federation-title">Club Alpino Italiano (CAI)</span>
+              <span class="year-badge">Est. 1863</span>
+            </div>
+            <div class="federation-location">Milan, Italy | Dolomites & Gran Paradiso</div>
+            <p class="federation-text">Founded in 1863, CAI organized the historic first climb of K2 in 1954. Today they care for thousands of kilometers of mountain trails and shelters across the Italian Alps.</p>
+          </div>
+          <div class="federation-card" data-name="Japan Mountaineering" data-year="1905" data-region="Japan" data-grade="Expedition">
+            <div class="fed-name-row">
+              <span class="federation-title">Japan Mountaineering & Sport Climbing Association</span>
+              <span class="year-badge">Est. 1905</span>
+            </div>
+            <div class="federation-location">Tokyo, Japan | Japanese Northern & Southern Alps</div>
+            <p class="federation-text">Coordinates mountain climbing throughout Japan and trains climbers for big expeditions to the highest peaks of the Himalayas and Karakoram.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <div class="footer-logo">
+          <img src="assets/img/logos/main-logo.svg" alt="Alpine Ascents" class="footer-logo-img">
+        </div>
+        <p class="footer-text">
+          Alpine Ascents helps climbers plan safe expeditions to the world's highest mountains. We focus on skilled guide work, clean mountain camps, and caring for local climbing staff.
+        </p>
+        <div class="footer-badges">
+          <span class="cert-badge"><i class="fa-solid fa-award text-emerald"></i> UIAA Member</span>
+          <span class="cert-badge"><i class="fa-solid fa-shield-halved text-emerald"></i> IFMGA Certified</span>
+          <span class="cert-badge"><i class="fa-solid fa-leaf text-emerald"></i> Leave No Trace</span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h5 class="footer-title">Expedition Portals</h5>
+        <ul class="footer-menu">
+          <li><a href="index.html"><i class="fa-solid fa-angle-right me-2 text-emerald"></i>Summit Dashboard</a></li>
+          <li><a href="knowledge.html"><i class="fa-solid fa-angle-right me-2 text-emerald"></i>Knowledge &amp; Physiology</a></li>
+          <li><a href="clubs.html"><i class="fa-solid fa-angle-right me-2 text-emerald"></i>Global Clubs &amp; Federations</a></li>
+          <li><a href="training.html"><i class="fa-solid fa-angle-right me-2 text-emerald"></i>Altitude Training &amp; Matrix</a></li>
+          <li><a href="stories.html"><i class="fa-solid fa-angle-right me-2 text-emerald"></i>Dispatches &amp; Rescues</a></li>
+          <li><a href="about.html"><i class="fa-solid fa-angle-right me-2 text-emerald"></i>Legacy, Ethics &amp; Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-camps">
+        <h5 class="footer-title">Regional Forward Bases</h5>
+        <div class="camp-item">
+          <strong>Kathmandu Base (Himalayas)</strong>
+          <span>Thamel Post, Kathmandu 44600, Nepal | Sat: +977 1 470 0000</span>
+        </div>
+        <div class="camp-item">
+          <strong>Skardu Headquarters (Karakoram)</strong>
+          <span>Airport Rd, Skardu 20430, Gilgit-Baltistan | Sat: +92 5815 450000</span>
+        </div>
+        <div class="camp-item">
+          <strong>Chamonix Command (Alps)</strong>
+          <span>Place de l'Église, 74400 Chamonix, France | +33 4 50 53 00 88</span>
+        </div>
+      </div>
+      <div class="footer-signup">
+        <h5 class="footer-title">High-Altitude Weather Bulletin</h5>
+        <p class="footer-text">
+          Get monthly climbing stories, base camp news, and upcoming mountain trip dates delivered to your email.
+        </p>
+        <div class="subscribe-box">
+          <input type="email" placeholder="basecamp@iridium-link.net" class="subscribe-input" id="email-input">
+          <button class="btn-emerald-sm" type="button" onclick="handleSubscribe()"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+        <div id="subscribe-alert" class="sub-alert-text">
+          <i class="fa-solid fa-check text-emerald me-1"></i> Dispatches synched to satellite feed.
+        </div>
+        <div class="alert-box">
+          <div class="satcom-label"><i class="fa-solid fa-satellite text-warning me-2"></i>Emergency Distress Sat-Com</div>
+          <div class="satcom-freq">Freq: <strong>143.900 MHz</strong> | Cospas-Sarsat: <strong>406.025 MHz</strong></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="copyright">
+        &copy; 2026 Alpine Ascents Portal. Aptech ACCP AI eProject Architecture. All global climbing dispatches verified under UIAA standards.
+      </div>
+      <div class="status-text">
+        <span class="status-indicator-live"></span> Live Station Active: Summit Weather Online
+      </div>
+    </div>
+  </footer>
+  <div class="modal fade" id="booking-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-dialog-glass p-4">
+        <div class="modal-header border-0 pb-0">
+          <h4 class="modal-title fw-bold text-white">Book High-Altitude Expedition</h4>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="booking-form">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label text-muted small fw-semibold">Target Peak</label>
+                <select class="input-box" id="peak-dropdown" required>
+                  <option value="K2 (8,611m)" selected>K2 / Godwin-Austen (8,611m) [Abruzzi Spur]</option>
+                  <option value="Everest (8,848m)">Mount Everest (8,848m) [South Col]</option>
+                  <option value="Ama Dablam (6,812m)">Ama Dablam (6,812m) [SW Ridge]</option>
+                  <option value="Matterhorn (4,478m)">Matterhorn (4,478m) [H&ouml;rnli Ridge]</option>
+                  <option value="Broad Peak (8,051m)">Broad Peak (8,051m) [West Ridge]</option>
+                  <option value="Mont Blanc (4,810m)">Mont Blanc (4,810m) [Go&ucirc;ter Ridge]</option>
+                  <option value="Lhotse (8,516m)">Lhotse (8,516m) [South Face]</option>
+                  <option value="Annapurna I (8,091m)">Annapurna I (8,091m) [North Face]</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label text-muted small fw-semibold">Expedition Season</label>
+                <select class="input-box" required>
+                  <option selected>Post-Monsoon Alpine Window (Autumn 2026)</option>
+                  <option>Spring 2026 (Pre-Monsoon Window)</option>
+                  <option>Summer 2026 (Karakoram Season)</option>
+                  <option>Winter 2026/27 (Winter Climbing Season)</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label text-muted small fw-semibold">Full Legal Name</label>
+                <input type="text" class="input-box" placeholder="Reinhold Messner" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label text-muted small fw-semibold">Contact Email</label>
+                <input type="email" class="input-box" placeholder="lead.guide@chamonix-alpinist.com" required>
+              </div>
+              <div class="col-12">
+                <label class="form-label text-muted small fw-semibold">Prior High-Altitude Experience & Certifications</label>
+                <textarea class="input-box" rows="3" placeholder="Detail 7,000m+ ascent logs, technical mixed grades (e.g., WI5/M6), glacier crevasse arrest certs, and alpine endurance history..." required></textarea>
+              </div>
+              <div class="col-12 text-end mt-4">
+                <button type="button" class="btn-outline me-2" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn-main">Submit Application</button>
+              </div>
+            </div>
+          </form>
+          <div id="success-message" class="mt-3 p-3 rounded border border-ochre text-ochre booking-success-box">
+            <i class="fa-solid fa-circle-check me-2"></i> Application received. Our Chief Medical & Logistics Officer will review your prior ascent logs within 24 hours.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <div class="bar-label">
+      <i class="fa-solid fa-satellite-dish"></i> Live Stream
+    </div>
+    <div class="bar-scroll">
+      <span class="bar-item"><i class="fa-regular fa-clock me-1"></i> <strong id="clock-time">--:--:-- UTC</strong></span>
+      <span class="bar-item"><i class="fa-regular fa-calendar me-1"></i> <strong id="clock-date">SYNCING CALENDAR...</strong></span>
+      <span class="bar-item"><i class="fa-solid fa-location-dot me-1"></i> <strong id="current-location">ACQUIRING SAT COMM / BEACON...</strong></span>
+      <span class="bar-item"><i class="fa-solid fa-mountain me-1"></i> Everest Base Camp: <strong>5,364m | -18°C</strong></span>
+      <span class="bar-item"><i class="fa-solid fa-wind me-1"></i> K2 Godwin-Austen: <strong>5,150m | -24°C</strong></span>
+      <span class="bar-item"><i class="fa-solid fa-shield-halved me-1"></i> Safety Status: <strong>All Weather Stations Online</strong></span>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="assets/js/main.js?v=20261024_dynamic_v1"></script>
+</body>
+</html>

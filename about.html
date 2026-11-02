@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Legacy, Mountain Ethics & Sherpa Welfare | Alpine Ascents</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logos/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logos/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/logos/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/logos/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261029_fix_v3">
+  <link rel="stylesheet" href="assets/css/about.css">
+</head>
+<body>
+    <header class="navbar">
+    <div class="nav-box">
+      <a href="index.html" class="logo-box"  aria-label="Alpine Ascents">
+        <img src="assets/img/logos/navbar-logo.svg" alt="Alpine Ascents" class="site-logo">
+      </a>
+      <nav class="nav-links d-none d-xl-flex">
+        <a href="index.html" class="nav-item" data-target="home-page">Expeditions</a>
+        <a href="knowledge.html" class="nav-item" data-target="info-page">Knowledge Base</a>
+        <a href="clubs.html" class="nav-item" data-target="map-page">Clubs &amp; Map</a>
+        <a href="training.html" class="nav-item" data-target="training-page">Training &amp; Routes</a>
+        <a href="stories.html" class="nav-item" data-target="stories-page">Dispatches</a>
+        <a href="about.html" class="nav-item active" data-target="about-page">About &amp; Ethics</a>
+        <a href="contact.html" class="nav-item" data-target="contact-page">Contact Us</a>
+      </nav>
+      <div class="nav-right-cluster">
+        <div class="counter-badge d-none d-sm-flex">
+          <span class="dot-yellow"></span>
+          <span>Visitors:</span>
+          <span id="visitor-counter" class="counter-number">1,482</span>
+        </div>
+        <button id="menu-button" class="menu-btn d-xl-none" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <div id="mobile-menu" class="mobile-box">
+        <div class="mobile-counter-box d-sm-none">
+          <span class="dot-yellow"></span>
+          <span>Visitors: <strong id="mobile-counter" class="counter-number">1,482</strong></span>
+        </div>
+        <a href="index.html" class="mobile-link" data-target="home-page">
+          <i class="fa-solid fa-mountain me-2"></i> Expeditions
+        </a>
+        <a href="knowledge.html" class="mobile-link" data-target="info-page">
+          <i class="fa-solid fa-book-open me-2"></i> Knowledge Base
+        </a>
+        <a href="clubs.html" class="mobile-link" data-target="map-page">
+          <i class="fa-solid fa-map-location-dot me-2"></i> Clubs &amp; Map
+        </a>
+        <a href="training.html" class="mobile-link" data-target="training-page">
+          <i class="fa-solid fa-route me-2"></i> Training &amp; Routes
+        </a>
+        <a href="stories.html" class="mobile-link" data-target="stories-page">
+          <i class="fa-solid fa-newspaper me-2"></i> Dispatches
+        </a>
+        <a href="about.html" class="mobile-link active" data-target="about-page">
+          <i class="fa-solid fa-shield-halved me-2"></i> About &amp; Ethics
+        </a>
+        <a href="contact.html" class="mobile-link" data-target="contact-page">
+          <i class="fa-solid fa-envelope me-2"></i> Contact Us
+        </a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section id="about-page" class="spa-view-section">
+      <div class="section-inner-container">
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-8">
+            <div class="map-headline-label">Our Legacy & Ethics</div>
+            <h2 class="section-heading mb-3">Mountain Climbing Safety & Environmental Ethics</h2>
+            <p class="article-summary fs-6">
+              Alpine Ascents was created by climbers and Sherpa guides who love the mountains. We believe in fair treatment for porters, clean climbing trails, and safe group expeditions.
+            </p>
+          </div>
+        </div>
+        <div class="gallery-grid mb-5">
+          <div class="gallery-card-item"
+               data-title="Khumbu Icefall Traverse"
+               data-sub="Everest South Col Route | 5,800m"
+               data-range="Khumbu Himal, Mahalangur Range, Nepal"
+               data-grade="Alpine Glacial Transit | Grade IV"
+               data-altitude="5,800m Base Transit"
+               data-safety="Strict 03:00 departure to avoid falling ice and glacier melt. 100% waste pack-out verified."
+               data-desc="The Khumbu Icefall is the main passage connecting Everest Base Camp to Camp 1. Climbers cross moving ice blocks and deep crevasses using aluminium ladders early in the morning before the sun melts the ice."
+               data-peak="Everest (8,848m)">
+            <img src="assets/img/peaks/khumbu.jpg" alt="Khumbu Icefall Traverse">
+            <div class="gallery-card-overlay">
+              <div class="gallery-photo-title">Khumbu Icefall Traverse</div>
+              <div class="gallery-photo-sub">Everest South Col Route | 5,800m</div>
+            </div>
+          </div>
+          <div class="gallery-card-item"
+               data-title="Matterhorn Hörnli Ridge"
+               data-sub="Fast Alpine Ascent | 4,200m"
+               data-range="Pennine Alps, Switzerland &amp; Italy Border"
+               data-grade="Mixed Rock &amp; Arête | Grade AD / III+"
+               data-altitude="4,478m Summit Pyramidal Massif"
+               data-safety="Clean climbing protocol: removable nuts &amp; cams only. Zero permanent rock defacement."
+               data-desc="The classic Hornli Ridge has exciting rock climbing along steep steps. After passing the small Solvay emergency hut at 4,003m, climbers use fixed safety ropes to reach the summit, always following clean climbing rules."
+               data-peak="Matterhorn (4,478m)">
+            <img src="assets/img/peaks/matterhorn.jpg" alt="Matterhorn Hörnli Ridge">
+            <div class="gallery-card-overlay">
+              <div class="gallery-photo-title">Matterhorn Hörnli Ridge</div>
+              <div class="gallery-photo-sub">Fast Alpine Ascent | 4,200m</div>
+            </div>
+          </div>
+          <div class="gallery-card-item"
+               data-title="Ama Dablam Southwest Ridge"
+               data-sub="Technical Mixed Rock and Ice | 6,400m"
+               data-range="Khumbu Himal, Sagarmatha National Park, Nepal"
+               data-grade="Steep Granite &amp; Ice | Grade TD / 5.9 / WI4"
+               data-altitude="6,812m Technical Summit"
+               data-safety="Full end-of-season fixed line recovery. Fair Sherpa wages with shared expedition profit bonuses."
+               data-desc="Known as the 'Matterhorn of the Himalayas', Ama Dablam is a beautiful and technical mountain. The route involves steep rock climbing up the Yellow Tower, narrow snow ridges, and ice walls leading to the summit."
+               data-peak="Ama Dablam (6,812m)">
+            <img src="assets/img/peaks/amadablam.jpg" alt="Ama Dablam Southwest Ridge">
+            <div class="gallery-card-overlay">
+              <div class="gallery-photo-title">Ama Dablam Southwest Ridge</div>
+              <div class="gallery-photo-sub">Technical Mixed Rock and Ice | 6,400m</div>
+            </div>
+          </div>
+          <div class="gallery-card-item"
+               data-title="K2 Abruzzi Shoulder Camp 4"
+               data-sub="Godwin-Austen Glacial Ridge | 7,900m"
+               data-range="Karakoram Range, Gilgit-Baltistan, Pakistan"
+               data-grade="Extreme 8000m Siege | Grade VI / Death Zone"
+               data-altitude="8,611m Savage Mountain"
+               data-safety="Mandatory empty oxygen bottle pack-out. Real-time satellite GPS tracking and radio support."
+               data-desc="Located high on the shoulder of K2 above the Black Pyramid, Camp 4 is the final camp before the summit push. Climbers face freezing temperatures and strong winds as they climb through the famous Bottleneck section."
+               data-peak="K2 (8,611m)">
+            <img src="assets/img/peaks/k2.jpg" alt="K2 Abruzzi Shoulder Camp 4">
+            <div class="gallery-card-overlay">
+              <div class="gallery-photo-title">K2 Abruzzi Shoulder Camp 4</div>
+              <div class="gallery-photo-sub">Godwin-Austen Glacial Ridge | 7,900m</div>
+            </div>
+          </div>
+          <div class="gallery-card-item"
+               data-title="Mont Blanc Massif Arête"
+               data-sub="Dawn Glacier Transit | 4,100m"
+               data-range="Graian Alps, France &amp; Italy Border"
+               data-grade="High Alpine Glacial Ridge | Grade PD+"
+               data-altitude="4,809m Highest Peak in Western Europe"
+               data-safety="Refuge environmental rules. Early dawn climb to avoid falling rocks in the gully."
+               data-desc="This famous snow ridge stands high above the Chamonix Valley. Climbers cross snow bridges and wide glaciers while staying roped together for safety."
+               data-peak="Mont Blanc (4,810m)">
+            <img src="assets/img/peaks/montblanc.jpg" alt="Mont Blanc Massif Arête">
+            <div class="gallery-card-overlay">
+              <div class="gallery-photo-title">Mont Blanc Massif Arête</div>
+              <div class="gallery-photo-sub">Dawn Glacier Transit | 4,100m</div>
+            </div>
+          </div>
+          <div class="gallery-card-item"
+               data-title="Nuptse &amp; Lhotse Wall"
+               data-sub="Western Cwm High Camp | 6,500m"
+               data-range="Mahalangur Himal, Khumbu, Nepal"
+               data-grade="Blue Ice Face &amp; Geneva Spur | Grade TD"
+               data-altitude="8,516m Lhotse Summit Wall"
+               data-safety="Clean Mountain Project waste deposits. Sacred cultural respect for Sherpa cairns."
+               data-desc="This massive wall of blue ice stands directly above Camp 2. Climbers use crampons and ice axes to climb the steep frozen slope up to Camp 3 on the way to Everest and Lhotse."
+               data-peak="Lhotse (8,516m)">
+            <img src="assets/img/peaks/lhotse.jpg" alt="Nuptse &amp; Lhotse Wall">
+            <div class="gallery-card-overlay">
+              <div class="gallery-photo-title">Nuptse &amp; Lhotse Wall</div>
+              <div class="gallery-photo-sub">Western Cwm High Camp | 6,500m</div>
+            </div>
+          </div>
+        </div>
+        <div class="calculator-box">
+          <div class="row g-4 align-items-stretch">
+            <div class="col-lg-6">
+              <div class="ethics-card p-4 rounded border border-secondary h-100" 
+                   data-title="Leave No Trace &amp; Clean Climbing Charter"
+                   data-sub="UIAA Environmental Protection Standard"
+                   data-range="Global Eight-Thousanders &amp; Alpine Ranges"
+                   data-grade="Environmental Protocol &amp; Zero Footprint"
+                   data-altitude="All High Altitude Staging Camps"
+                   data-safety="100% Waste Pack-Out | Biopack System | Gear Recovery"
+                   data-desc="We carry all trash and empty oxygen bottles down from every high camp. Following clean climbing rules, our guides use removable safety gear instead of drilling permanent metal bolts into natural rock. Every expedition team deposits environmental bonds to guarantee complete ecological restoration of high altitude staging grounds.">
+                <h3 class="section-heading fs-3 mb-3">Leave No Trace &amp; Clean Climbing</h3>
+                <p class="article-summary mb-3">
+                  We carry all trash and empty oxygen bottles down from every high camp. Following clean climbing rules, our guides use removable safety gear instead of drilling permanent metal bolts into natural rock.
+                </p>
+                <div class="d-flex gap-3 flex-wrap">
+                  <div class="article-tag tag-ochre"><i class="fa-solid fa-leaf"></i> 100% Pack-Out Certified</div>
+                  <div class="article-tag tag-ochre"><i class="fa-solid fa-handshake"></i> Fair Sherpa Wages</div>
+                  <div class="article-tag tag-ochre"><i class="fa-solid fa-kit-medical"></i> High Altitude Rescue Insurance</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="ethics-card p-4 rounded border border-secondary h-100" 
+                   data-title="Sherpa Porter Welfare Protocol"
+                   data-sub="Fair Pay, Medical Care &amp; Human Dignity"
+                   data-range="Himalayas &amp; Karakoram Expedition Corridors"
+                   data-grade="Humanitarian Mountain Charter"
+                   data-altitude="Base Camp to High Summit Zones (8,000m+)"
+                   data-safety="20kg Load Ceilings | Supplemental O₂ Above 7,000m | Family Educational Endowments"
+                   data-desc="All our Sherpa team members receive full health and rescue insurance. We provide them with the same warm down suits as our lead guides, along with fair bonus pay for every summit trip. We enforce a strict 20kg maximum load ceiling per porter, provide mandatory supplemental oxygen above 7,000m, and fund children educational endowments for all staff on our summit expeditions.">
+                <h5 class="fw-bold text-white mb-2"><i class="fa-solid fa-mountain-sun text-ochre me-2"></i> Sherpa Porter Welfare Protocol</h5>
+                <p class="small mb-3 about-text-lead">
+                  All our Sherpa team members receive full health and rescue insurance. We provide them with the same warm down suits as our lead guides, along with fair bonus pay for every summit trip.
+                </p>
+                <div class="small about-text-body">
+                  <i class="fa-solid fa-check text-ochre me-1"></i> Maximum load ceilings: 20kg per porter.<br>
+                  <i class="fa-solid fa-check text-ochre me-1"></i> Mandatory supplemental O₂ provided above 7,000m.<br>
+                  <i class="fa-solid fa-check text-ochre me-1"></i> Family educational endowment funded per summit expedition.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <div class="footer-logo">
+          <img src="assets/img/logos/main-logo.svg" alt="Alpine Ascents" class="footer-logo-img">
+        </div>
+        <p class="footer-text">
+          Alpine Ascents helps climbers plan safe expeditions to the world's highest mountains. We focus on skilled guide work, clean mountain camps, and caring for local climbing staff.
+        </p>
+        <div class="footer-badges">
+          <span class="cert-badge"><i class="fa-solid fa-award text-emerald"></i> UIAA Member</span>
+          <span class="cert-badge"><i class="fa-solid fa-shield-halved text-emerald"></i> IFMGA Certified</span>
+          <span class="cert-badge"><i class="fa-solid fa-leaf text-emerald"></i> Leave No Trace</span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h5 class="footer-title">Expedition Portals</h5>
+        <ul class="footer-menu">
+          <li><a href="index.html"><i class="fa-solid fa-angle-right me-2 text-emerald"></i>Summit Dashboard</a></li>
+          <li><a href="knowledge.html"><i class="fa-solid fa-angle-right me-2 text-emerald"></i>Knowledge &amp; Physiology</a></li>
+          <li><a href="clubs.html"><i class="fa-solid fa-angle-right me-2 text-emerald"></i>Global Clubs &amp; Federations</a></li>
+          <li><a href="training.html"><i class="fa-solid fa-angle-right me-2 text-emerald"></i>Altitude Training &amp; Matrix</a></li>
+          <li><a href="stories.html"><i class="fa-solid fa-angle-right me-2 text-emerald"></i>Dispatches &amp; Rescues</a></li>
+          <li><a href="about.html"><i class="fa-solid fa-angle-right me-2 text-emerald"></i>Legacy, Ethics &amp; Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-camps">
+        <h5 class="footer-title">Regional Forward Bases</h5>
+        <div class="camp-item">
+          <strong>Kathmandu Base (Himalayas)</strong>
+          <span>Thamel Post, Kathmandu 44600, Nepal | Sat: +977 1 470 0000</span>
+        </div>
+        <div class="camp-item">
+          <strong>Skardu Headquarters (Karakoram)</strong>
+          <span>Airport Rd, Skardu 20430, Gilgit-Baltistan | Sat: +92 5815 450000</span>
+        </div>
+        <div class="camp-item">
+          <strong>Chamonix Command (Alps)</strong>
+          <span>Place de l'Église, 74400 Chamonix, France | +33 4 50 53 00 88</span>
+        </div>
+      </div>
+      <div class="footer-signup">
+        <h5 class="footer-title">High-Altitude Weather Bulletin</h5>
+        <p class="footer-text">
+          Get simple seasonal climbing updates, weather windows, and mountain safety tips straight to your inbox.
+        </p>
+        <div class="subscribe-box">
+          <input type="email" placeholder="basecamp@iridium-link.net" class="subscribe-input" id="email-input">
+          <button class="btn-emerald-sm" type="button" onclick="handleSubscribe()"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+        <div id="subscribe-alert" class="sub-alert-text">
+          <i class="fa-solid fa-check text-emerald me-1"></i> Dispatches synched to satellite feed.
+        </div>
+        <div class="alert-box">
+          <div class="satcom-label"><i class="fa-solid fa-satellite text-warning me-2"></i>Emergency Distress Sat-Com</div>
+          <div class="satcom-freq">Freq: <strong>143.900 MHz</strong> | Cospas-Sarsat: <strong>406.025 MHz</strong></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="copyright">
+        &copy; 2026 Alpine Ascents Portal. Aptech ACCP AI eProject Architecture. All global climbing dispatches verified under UIAA standards.
+      </div>
+      <div class="status-text">
+        <span class="status-indicator-live"></span> Live Station Active: Summit Weather Online
+      </div>
+    </div>
+  </footer>
+    <div class="modal fade" id="card-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content modal-dialog-glass p-3 p-md-4">
+        <div class="modal-header border-0 pb-0">
+          <div>
+            <div id="modal-card-tag" class="map-headline-label">High-Altitude Expedition Focus</div>
+            <h4 class="modal-title fw-bold text-white mb-1" id="modal-card-title">Card Title</h4>
+            <div class="gallery-photo-sub" id="modal-card-subtitle">Route &amp; Altitude</div>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-3">
+          <div class="mb-3 text-center" id="modal-card-media-box">
+            <img id="modal-card-image" src="" alt="Card Image" class="modal-card-img">
+          </div>
+          <p class="article-summary fs-6 mb-3" id="modal-card-description">
+            Description goes here...
+          </p>
+          <div class="p-3 rounded border border-secondary mb-2" id="modal-card-meta-box">
+            <div class="row g-2 small text-light">
+              <div class="col-sm-6" id="modal-meta-range"><strong>Mountain Range:</strong> <span class="text-white">--</span></div>
+              <div class="col-sm-6" id="modal-meta-grade"><strong>Technical Grade:</strong> <span class="text-white">--</span></div>
+              <div class="col-sm-6" id="modal-meta-altitude"><strong>Peak Elevation:</strong> <span class="text-white">--</span></div>
+              <div class="col-sm-6" id="modal-meta-safety"><strong>Ethics &amp; Safety:</strong> <span class="text-white">--</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer modal-card-footer border-top border-secondary pt-3 pb-0 px-0">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 w-100">
+            <span class="small text-muted" id="modal-card-footer-note"><i class="fa-solid fa-shield-halved text-ochre me-1"></i> Verified UIAA Alpine Expedition Protocol</span>
+            <div class="modal-btn-cluster d-flex flex-wrap align-items-center gap-2">
+              <button type="button" class="btn-outline modal-action-btn-item" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn-main modal-action-btn-item" id="modal-action-btn">Plan Expedition</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="booking-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content modal-dialog-glass p-4">
+        <div class="modal-header border-0 pb-0">
+          <h4 class="modal-title fw-bold text-white">Book High-Altitude Expedition</h4>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="booking-form">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label text-muted small fw-semibold">Target Peak</label>
+                <select class="input-box" id="peak-dropdown" required>
+                  <option value="K2 (8,611m)" selected>K2 / Godwin-Austen (8,611m) [Abruzzi Spur]</option>
+                  <option value="Everest (8,848m)">Mount Everest (8,848m) [South Col]</option>
+                  <option value="Ama Dablam (6,812m)">Ama Dablam (6,812m) [SW Ridge]</option>
+                  <option value="Matterhorn (4,478m)">Matterhorn (4,478m) [H&ouml;rnli Ridge]</option>
+                  <option value="Broad Peak (8,051m)">Broad Peak (8,051m) [West Ridge]</option>
+                  <option value="Mont Blanc (4,810m)">Mont Blanc (4,810m) [Go&ucirc;ter Ridge]</option>
+                  <option value="Lhotse (8,516m)">Lhotse (8,516m) [South Face]</option>
+                  <option value="Annapurna I (8,091m)">Annapurna I (8,091m) [North Face]</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label text-muted small fw-semibold">Expedition Season</label>
+                <select class="input-box" required>
+                  <option selected>Post-Monsoon Alpine Window (Autumn 2026)</option>
+                  <option>Spring 2026 (Pre-Monsoon Window)</option>
+                  <option>Summer 2026 (Karakoram Season)</option>
+                  <option>Winter 2026/27 (Winter Climbing Season)</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label text-muted small fw-semibold">Full Legal Name</label>
+                <input type="text" class="input-box" placeholder="Reinhold Messner" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label text-muted small fw-semibold">Contact Email</label>
+                <input type="email" class="input-box" placeholder="lead.guide@chamonix-alpinist.com" required>
+              </div>
+              <div class="col-12">
+                <label class="form-label text-muted small fw-semibold">Prior High-Altitude Experience & Certifications</label>
+                <textarea class="input-box" rows="3" placeholder="Detail 7,000m+ ascent logs, technical mixed grades (e.g., WI5/M6), glacier crevasse arrest certs, and alpine endurance history..." required></textarea>
+              </div>
+              <div class="col-12 text-end mt-4">
+                <button type="button" class="btn-outline me-2" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn-main">Submit Application</button>
+              </div>
+            </div>
+          </form>
+          <div id="success-message" class="mt-3 p-3 rounded border border-ochre text-ochre booking-success-box">
+            <i class="fa-solid fa-circle-check me-2"></i> Application received. Our Chief Medical & Logistics Officer will review your prior ascent logs within 24 hours.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <div class="bar-label">
+      <i class="fa-solid fa-satellite-dish"></i> Live Stream
+    </div>
+    <div class="bar-scroll">
+      <span class="bar-item"><i class="fa-regular fa-clock me-1"></i> <strong id="clock-time">--:--:-- UTC</strong></span>
+      <span class="bar-item"><i class="fa-regular fa-calendar me-1"></i> <strong id="clock-date">SYNCING CALENDAR...</strong></span>
+      <span class="bar-item"><i class="fa-solid fa-location-dot me-1"></i> <strong id="current-location">ACQUIRING SAT COMM / BEACON...</strong></span>
+      <span class="bar-item"><i class="fa-solid fa-mountain me-1"></i> Everest Base Camp: <strong>5,364m | -18°C</strong></span>
+      <span class="bar-item"><i class="fa-solid fa-wind me-1"></i> K2 Godwin-Austen: <strong>5,150m | -24°C</strong></span>
+      <span class="bar-item"><i class="fa-solid fa-shield-halved me-1"></i> Safety Status: <strong>All Weather Stations Online</strong></span>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="assets/js/main.js?v=20261024_dynamic_v1"></script>
+</body>
+</html>
