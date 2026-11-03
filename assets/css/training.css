@@ -12,3 +12,16 @@
 .result-display-box { background-color: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; padding: 20px; margin-top: 24px; display: none; }
 .matrix-card { background-color: var(--bg-card); border: 1px solid var(--border-rule); border-radius: 10px; padding: 26px 24px; margin-top: 36px; }
 .training-callout-card { background-color: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; padding: 18px 20px; }
+@media (max-width: 768px) {
+  .training-stage {
+    padding: 85px 16px 35px 16px !important;
+  }
+  .calc-card {
+    padding: 24px 18px !important;
+    margin: 24px auto 40px auto !important;
+  }
+  .calc-inputs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+}

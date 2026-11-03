@@ -22,3 +22,39 @@
 .modal-card-meta-box { background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; }
 .about-text-lead { color: rgba(255, 255, 255, 0.85); line-height: 1.6; }
 .about-text-body { color: rgba(255, 255, 255, 0.85); line-height: 1.8; }
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 85px 16px 35px 16px !important;
+  }
+  .ethics-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    margin-top: 24px !important;
+    margin-bottom: 40px !important;
+  }
+  .ethics-card {
+    padding: 24px 20px !important;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    margin-top: 24px !important;
+    margin-bottom: 40px !important;
+  }
+  .gallery-photo {
+    height: 240px !important;
+  }
+  .gallery-photo-meta {
+    padding: 16px 18px !important;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ethics-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+}

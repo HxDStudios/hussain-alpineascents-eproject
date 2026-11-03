@@ -15,3 +15,28 @@
 .federation-meta { font-size: 0.84rem; color: #cbd5e1; line-height: 1.55; }
 .map-geo-pin { cursor: pointer; transition: transform 0.2s ease; }
 .map-geo-pin:hover { transform: scale(1.15); }
+@media (max-width: 768px) {
+  .clubs-stage {
+    padding: 85px 16px 35px 16px !important;
+  }
+  .clubs-controls-rack {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    padding: 16px !important;
+  }
+  #main-map {
+    height: 350px !important;
+  }
+  .federations-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .clubs-controls-rack {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .federations-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}

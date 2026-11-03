@@ -408,3 +408,37 @@
     gap: 0;
   }
 }
+@media (max-width: 991px) {
+  .contact-hero-stage {
+    padding-top: 85px !important;
+    padding-bottom: 45px !important;
+  }
+  .contact-info-panel {
+    padding: 22px 18px !important;
+    gap: 20px !important;
+  }
+  .contact-form-panel {
+    padding: 24px 18px !important;
+  }
+  .channel-item {
+    padding: 12px !important;
+  }
+  .channel-content {
+    min-width: 0 !important;
+  }
+  .channel-value {
+    font-size: 0.88rem !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+}
+@media (max-width: 576px) {
+  .channel-item {
+    padding: 10px 12px !important;
+  }
+  .channel-icon {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 0.9rem !important;
+  }
+}

@@ -6,13 +6,16 @@
   <title>Alpine Ascents: Base Operations Contact &amp; Expedition Vetting</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/svg+xml" href="assets/img/logos/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logos/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/logos/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/logos/favicon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261029_fix_v3">
-  <link rel="stylesheet" href="assets/css/contact.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261103_mobile_v4">
+  <link rel="stylesheet" href="assets/css/contact.css?v=20261103_mobile_v4">
 </head>
 <body>
   <header class="navbar">
@@ -118,7 +121,7 @@
                 </div>
                 <div class="channel-content">
                   <div class="channel-label">Direct Expedition Desk</div>
-                  <div class="channel-value">+92 (51) 287-4401 / +92 300 855-4821</div>
+                  <div class="channel-value"><span>+92 (51) 287-4401</span> <span class="text-secondary mx-1">/</span> <span>+92 300 855-4821</span></div>
                 </div>
               </div>
 
@@ -388,28 +391,17 @@
     </div>
   </footer>
 
-  <div class="ticker-bar">
-    <div class="ticker-box">
-      <div class="ticker-tag">
-        <span class="dot-red"></span>
-        <span class="ticker-label">LIVE STREAM</span>
-      </div>
-      <div class="ticker-item">
-        <i class="fa-solid fa-clock ticker-icon"></i>
-        <span id="clock-time">--:--:--</span>
-      </div>
-      <div class="ticker-item">
-        <i class="fa-solid fa-calendar ticker-icon"></i>
-        <span id="clock-date">-- --- ----</span>
-      </div>
-      <div class="ticker-item">
-        <i class="fa-solid fa-location-crosshairs ticker-icon"></i>
-        <span id="current-location">Concordia Base Station</span>
-      </div>
-      <div class="ticker-item">
-        <i class="fa-solid fa-shield-halved ticker-icon"></i>
-        <span>100% Fixed Route Safety</span>
-      </div>
+  <div class="bottom-bar">
+    <div class="bar-label">
+      <i class="fa-solid fa-satellite-dish"></i> Live Stream
+    </div>
+    <div class="bar-scroll">
+      <span class="bar-item"><i class="fa-regular fa-clock me-1"></i> <strong id="clock-time">--:--:-- UTC</strong></span>
+      <span class="bar-item"><i class="fa-regular fa-calendar me-1"></i> <strong id="clock-date">SYNCING CALENDAR...</strong></span>
+      <span class="bar-item"><i class="fa-solid fa-location-dot me-1"></i> <strong id="current-location">ACQUIRING SAT COMM / BEACON...</strong></span>
+      <span class="bar-item"><i class="fa-solid fa-mountain me-1"></i> Everest Base Camp: <strong>5,364m | -18°C</strong></span>
+      <span class="bar-item"><i class="fa-solid fa-wind me-1"></i> K2 Godwin-Austen: <strong>5,150m | -24°C</strong></span>
+      <span class="bar-item"><i class="fa-solid fa-shield-halved me-1"></i> Safety Status: <strong>All Weather Stations Online</strong></span>
     </div>
   </div>
 

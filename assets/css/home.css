@@ -217,3 +217,39 @@
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 85px 16px 35px 16px;
+  }
+  .expeditions-roster-stage {
+    padding: 70px 16px;
+  }
+  .expeditions-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .levels-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+  .level-card {
+    padding: 24px 20px !important;
+  }
+  .level-meta-row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+  .safety-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .levels-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+  .expeditions-cards-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
