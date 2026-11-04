@@ -225,20 +225,7 @@ main {
   line-height: 1.6;
 }
 
-.hero-subnav-link {
-  display: inline-flex;
-  align-items: center;
-  margin-top: 14px;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.72);
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
 
-.hero-subnav-link:hover {
-  color: var(--emerald-bright);
-  transform: translateX(3px);
-}
 
 .button-group {
   display: flex;

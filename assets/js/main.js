@@ -508,3 +508,13 @@ function initContactForm() {
     $charCount.text('0').removeClass('text-emerald text-danger').addClass('text-warning');
   });
 }
+
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' });
+  } else if (id === 'info-page' || id === 'knowledge') {
+    window.location.href = 'knowledge.html';
+  }
+}
+window.scrollToSection = scrollToSection;
